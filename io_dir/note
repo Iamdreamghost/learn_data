@@ -1,0 +1,6 @@
+open
+read
+write
+close
+memset
+lseek
