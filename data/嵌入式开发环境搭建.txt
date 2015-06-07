@@ -1,0 +1,41 @@
+﻿VM目的
+------构建linux环境
+------VMware 
+   |-- VMnet0 （ 桥接  ）
+   |    使用（连接）VMnet0虚拟交换机，
+   |    此时虚拟机相当于网络上的一台独立计算机，
+   |    与主机一样，拥有一个独立的IP地址
+   |-- VMnet1 （仅主机网络）
+   |    使用（连接）VMnet1虚拟交换机，此时虚拟机只能与虚拟机、
+   |    主机互连，与网络上的其他工作站不能访问
+   |-- VMnet8 （ NAT网络  ）
+   |      使用（连接）VMnet8虚拟交换机，
+   |      此时虚拟机可以通过主机单向访问网络上的
+   |      其他工作站（包括Internet网络），其他工作站不能访问虚拟机
+
+linux版本
+      RedHat ：server
+      Centos ：free server 
+      Ubunut ：Desktop
+
+1、vim安装
+    
+2、sshd搭建
+
+3、Zmodem的使用
+
+4、samba服务器的安装配置
+      配置文件
+      /etc/samba/smb.conf
+	  添加
+      [Share]
+      comment = Ubuntu12_04 share    
+      path = /home/blue/Public     //samba 共享文件路径
+      browseable = yes             //浏览权限
+      writeable = yes              //写权限
+	  
+	  smbpasswd -a username 添加smb用户
+
+5、vmtools安装
+
+6、SourceInsight使用

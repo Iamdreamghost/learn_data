@@ -1,0 +1,181 @@
+﻿1、GCC概述
+	将编程语言翻译成机器语言
+	gcc -o output
+2、编译过程
+	预处理
+		【gcc -E】
+	编译
+		【gcc -S】  生成汇编文件
+	汇编
+		【gcc -c】  汇编成二进制文件
+	链接
+		【gcc -o】 
+		
+		预编译【gcc -E】--->编译【gcc -S】--->汇编【gcc -c】--->链接【gcc -o】--->可执行文件
+		
+3、常见错误
+	预处理错误：
+	
+	#include<name> 在系统环境变量中去找
+	#include“name” 在自定义文件中去找
+	
+	not found
+	gcc -I 跟查找头文件的目录
+	
+	编译错误：
+	
+	链接错误：
+	    原材料不够，声明函数未实现
+			undefinde reference  to fun
+		寻找表签是否实现，链接时是否加入一起链接
+			multiple definition of fun
+		多了标签，只保留一个
+4、条件预处理
+	#ifdef #endif
+	【gcc -D】:
+		gcc -DABC1 === #define ABC1 
+
+5、宏展开下的# ##
+	#    字符串化
+	##   链接符号
+	
+	#define ABC(x)  #x   
+		printf(ABC(hello world\n));      显示hello world！
+	#define ABC(x)  1234##x
+		printf(ABC(56));                 显示123456
+	
+6、关键字
+	32个关键字被赋予物理意义的字符串
+	数据类型
+	自定义类型
+	逻辑结构
+	类型修饰符
+	杂项
+	sizeof:编译器给我们查看内存空间容量的一个工具
+	eg:
+		int main()
+		{
+			int a;
+			printf("the a is %d",sizeof a");
+		}
+	>>>>> the a is 4
+	
+	数据类型关键字：描述内存资源的属性，限制内存的大小！
+	char int float double 
+	char 硬件操作的最小单位：
+	bit 1 0
+	软件操作的最小单位：8bit == 1B 
+	char 
+	应用场景：
+		硬件处理的最小单位
+		
+	int
+	编译器最优的处理大小：
+		系统一个周期所能接受的最大处理单位 int
+		32bit     4B     int 
+		16bit     2B     int
+		
+	unsigned signed：
+	     内存空间的最高字节是符号位还是数据
+	有符号：数字
+	无符号：数据
+	
+	float double
+	大小
+	内存中的存在形式
+	eg：
+	int main()
+	{
+		char a = 0xfe;
+		unsigned char b = 0xfe;
+		a>>=1;
+		b>>=1;
+		printf("a=%02X,b=%02X\n",a,b);
+		return 0;
+	}
+>>>>>>> a=ff,b=7f
+
+	typedef
+	问题：#define ptr char *; ptr a，b; b代表什么意思？
+		
+	资源属性中位置的限定
+	
+	static 静态
+	应用场景：
+			1）、修饰函数内部的变量
+			2）、函数外部的变量
+			3）、函数的修饰符
+	extern
+	外部声明
+		
+	const 常量的定义
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
