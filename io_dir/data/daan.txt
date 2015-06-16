@@ -1,0 +1,87 @@
+1.c
+2.a
+3.b
+4.d
+5.c
+6.b
+7.d
+8.c
+9.b
+10.b
+11.b
+12.a
+13.d
+14.d
+15.d
+
+二.
+1.F
+2.T
+3.F
+4.F
+5.T
+6.F
+7.T
+8.T
+9.T
+10.T
+
+三.
+1.
+  const char *pathname:要打开的路径文件名，是一个字符指针常量
+  int flags: 文件打开权限的标志
+  mode_t: 文件属性掩码
+2.
+  gets输入时不对输入长度进行检查，即使用户输入超出buffer的长度也会接受，造成缓冲区溢出，程序崩溃。
+3.
+  标准io是一个标准I/O模型，具有一定的可移植性。标准io有全缓存，行缓存，不带缓存三种类型缓存。
+　文件io是系统层低级io，不带缓存。
+4.
+ *   fseek() fteel()
+ **  stat()
+ *** fopen() strlen()
+5.
+  #include<stdio.h>
+  #include<stdlib.h>
+
+  int main(int argc,char * argv[])
+  {
+	  FILE * file;
+	  char tmp;
+	  int i=0;
+	
+	  if(argc == 1)
+   	{
+	  	printf("input file\n");
+		  exit(1);
+	  }
+	
+	  file = fopen(argv[1],"r");
+	  if(file == NULL)
+	  {
+		  perror("open fail!");
+		  exit(1);
+	  }
+	
+	  while(fread(&tmp,1,1,file))
+	 {
+		  if(tmp == '\n')
+			i++;
+	 }
+	
+	  printf("%d\n",i);	
+
+	  fclose(file);
+	  return 0;
+  }
+
+6.
+	普通文件
+	目录文件
+	连接文件
+	字符设备文件
+	块设备文件
+	管道文件
+	套接字文件
+7.
+	见io_daan
